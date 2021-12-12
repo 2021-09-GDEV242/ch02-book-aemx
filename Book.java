@@ -21,6 +21,7 @@ class Book
         author = bookAuthor;
         title = bookTitle;
     }
+    
     // 83 - create accessors for String fields
     public String getAuthor()
     {
@@ -30,4 +31,14 @@ class Book
     {
         return title;
     }
+
+    // 84 - create print utility methods for private fields
+    public void printAuthor()
+    {
+        System.out.println(author);
+    }
+    public void printTitle()
+    {
+        System.out.println(title);
+    }   
 }
