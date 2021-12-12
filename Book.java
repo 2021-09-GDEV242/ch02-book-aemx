@@ -15,6 +15,8 @@ class Book
     private int pages;
     // 88 - modify object add a new private field with appropriate accessors
     private String refNumber;
+    // 91 - modify object add a new private field with appropriate accessors, mutators and reporting
+    private int borrowed;
 
     /**
      * Set the author and title fields when this object
@@ -26,6 +28,7 @@ class Book
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        borrowed = 0;
     }
 
     // 90 - modify object add a new private field with appropriate accessors, mutators and reporting
@@ -36,6 +39,11 @@ class Book
         } else {
             System.out.println("ERROR: Please enter a reference number at least 3 characters long.");
         }
+    }
+
+    public void borrow()
+    {
+        borrowed++;
     }
 
     // 83 - create accessors for String fields
@@ -55,6 +63,10 @@ class Book
     {
         return refNumber;
     }
+    public int getBorrowed()
+    {
+        return borrowed;
+    }
 
     // 84 - create print utility methods for private fields
     public void printAuthor()
@@ -71,7 +83,9 @@ class Book
     public void printDetails()
     {
         String strRef = refNumber.length() == 0 ? "ZZZ" : refNumber;
+        String strBorrowed = borrowed == 1 ? borrowed + " time." : borrowed + " times.";
         System.out.println("Title: " + title + ", Author: " + author +
-        ", Pages: " + pages + ", Ref: " + strRef);
+        ", Pages: " + pages + ", Ref: " + strRef +
+        "\nThe book has been borrowed " + strBorrowed);
     }
 }
