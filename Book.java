@@ -17,18 +17,21 @@ class Book
     private String refNumber;
     // 91 - modify object add a new private field with appropriate accessors, mutators and reporting
     private int borrowed;
+    // 92 - modify object add a new private field with appropriate accessors, mutators and reporting
+    private boolean courseText;
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages)
+    public Book(String bookAuthor, String bookTitle, int bookPages, boolean bookCourseText)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
         borrowed = 0;
+        courseText = bookCourseText;
     }
 
     // 90 - modify object add a new private field with appropriate accessors, mutators and reporting
@@ -66,6 +69,10 @@ class Book
     public int getBorrowed()
     {
         return borrowed;
+    }
+    public boolean isCourseText()
+    {
+        return courseText;
     }
 
     // 84 - create print utility methods for private fields
