@@ -48,4 +48,10 @@ class Book
     {
         System.out.println(title);
     }
+
+    // 87 - add a printDetails method that displays formatted output for all private fields
+    public void printDetails()
+    {
+        System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages);
+    }
 }
