@@ -28,9 +28,14 @@ class Book
         refNumber = "";
     }
 
+    // 90 - modify object add a new private field with appropriate accessors, mutators and reporting
     public void setRefNumber(String bookRefNumber)
     {
-        refNumber = bookRefNumber;      
+        if (bookRefNumber.length() >= 3) {
+            refNumber = bookRefNumber;
+        } else {
+            System.out.println("ERROR: Please enter a reference number at least 3 characters long.");
+        }
     }
 
     // 83 - create accessors for String fields
@@ -65,12 +70,8 @@ class Book
     // 89 - modify printDetails to add new content
     public void printDetails()
     {
-        String strout = "Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Ref: ";
-        if (refNumber.length() == 0) {
-            strout += "ZZZ";
-        } else {
-            strout += refNumber;
-        }
-        System.out.println(strout);
+        String strRef = refNumber.length() == 0 ? "ZZZ" : refNumber;
+        System.out.println("Title: " + title + ", Author: " + author +
+        ", Pages: " + pages + ", Ref: " + strRef);
     }
 }
