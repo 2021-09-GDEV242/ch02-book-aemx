@@ -13,6 +13,8 @@ class Book
     private String title;
     // 85 - modify object add a new private field with appropriate accessors
     private int pages;
+    // 88 - modify object add a new private field with appropriate accessors
+    private String refNumber;
 
     /**
      * Set the author and title fields when this object
@@ -23,6 +25,12 @@ class Book
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
+        refNumber = "";
+    }
+
+    public void setRefNumber(String bookRefNumber)
+    {
+        refNumber = bookRefNumber;      
     }
 
     // 83 - create accessors for String fields
@@ -37,6 +45,10 @@ class Book
     public int getPages()
     {
         return pages;
+    }
+    public String getRefNumber()
+    {
+        return refNumber;
     }
 
     // 84 - create print utility methods for private fields
@@ -54,4 +66,6 @@ class Book
     {
         System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages);
     }
+
+
 }
