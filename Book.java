@@ -62,10 +62,15 @@ class Book
     }
 
     // 87 - add a printDetails method that displays formatted output for all private fields
+    // 89 - modify printDetails to add new content
     public void printDetails()
     {
-        System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages);
+        String strout = "Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Ref: ";
+        if (refNumber.length() == 0) {
+            strout += "ZZZ";
+        } else {
+            strout += refNumber;
+        }
+        System.out.println(strout);
     }
-
-
 }
